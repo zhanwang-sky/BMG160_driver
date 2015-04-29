@@ -1,10 +1,10 @@
 /*
 ****************************************************************************
-* Copyright (C) 2014 Bosch Sensortec GmbH
+* Copyright (C) 2014 - 2015 Bosch Sensortec GmbH
 *
 * bmg160_support.c
-* Date: 2014/12/12
-* Revision: 1.0.4 $
+* Date: 2015/04/29
+* Revision: 1.0.5 $
 *
 * Usage: Sensor Driver support file for  BMG160 sensor
 *
@@ -128,15 +128,15 @@ s32 bmg160_data_readout_template(void)
 {
 	/* Gyro */
 	/* variable used for read the sensor data*/
-	s16	v_gyro_datax_s16, v_gyro_datay_s16, v_gyro_dataz_s16 = C_BMG160_ZERO_U8X;
+	s16	v_gyro_datax_s16, v_gyro_datay_s16, v_gyro_dataz_s16 = BMG160_INIT_VALUE;
 	/* structure used for read the sensor data - xyz*/
 	struct bmg160_data_t data_gyro;
 	/* structure used for read the sensor data - xyz and interrupt status*/
 	struct bmg160_data_t gyro_xyzi_data;
 	/* variable used for read the gyro bandwidth data*/
-	u8	v_gyro_value_u8 = C_BMG160_ZERO_U8X;
+	u8	v_gyro_value_u8 = BMG160_INIT_VALUE;
 	/* variable used for set the gyro bandwidth data*/
-	u8 v_bw_u8 = C_BMG160_ZERO_U8X;
+	u8 v_bw_u8 = BMG160_INIT_VALUE;
 	/* result of communication results*/
 	s32 com_rslt = ERROR;
 
@@ -165,8 +165,8 @@ s32 bmg160_data_readout_template(void)
  *	NORMAL mode set from the register 0x11 and 0x12
  *	While sensor in the NORMAL mode idle time of at least 2us(micro seconds)
  *	is required to write/read operations
- *	0x11 -> bit 5,7 -> set value as C_BMG160_ZERO_U8X
- *	0x12 -> bit 6,7 -> set value as C_BMG160_ZERO_U8X
+ *	0x11 -> bit 5,7 -> set value as BMG160_INIT_VALUE
+ *	0x12 -> bit 6,7 -> set value as BMG160_INIT_VALUE
  *	Note:
  *		If the sensor is in the fast power up mode idle time of least
  *		450us(micro seconds) required for write/read operations
@@ -182,7 +182,7 @@ s32 bmg160_data_readout_template(void)
 ************************* START GET and SET FUNCTIONS DATA ***************
 *--------------------------------------------------------------------------*/
 /* This API used to Write the bandwidth of the gyro sensor
-	input value have to be give 0x10 bit C_BMG160_ZERO_U8X to 3
+	input value have to be give 0x10 bit BMG160_INIT_VALUE to 3
 	The bandwidth set from the register */
 	v_bw_u8 = C_BMG160_BW_230HZ_U8X;/* set gyro bandwidth of 230Hz*/
 	com_rslt += bmg160_set_bw(v_bw_u8);
@@ -251,7 +251,7 @@ return com_rslt;
 	bmg160.delay_msec = BMG160_delay_msek;
 	bmg160.dev_addr = BMG160_I2C_ADDR1;
 
-	return C_BMG160_ZERO_U8X;
+	return BMG160_INIT_VALUE;
 }
 
 /*---------------------------------------------------------------------------*
@@ -270,7 +270,7 @@ s8 SPI_routine(void) {
 	bmg160.bus_read = BMG160_SPI_bus_read;
 	bmg160.delay_msec = BMG160_delay_msek;
 
-	return C_BMG160_ZERO_U8X;
+	return BMG160_INIT_VALUE;
 }
 
 /************** I2C/SPI buffer length ******/
@@ -296,12 +296,12 @@ s8 SPI_routine(void) {
  */
 s8 BMG160_I2C_bus_write(u8 dev_addr, u8 reg_addr, u8 *reg_data, u8 cnt)
 {
-	s32 iError = C_BMG160_ZERO_U8X;
+	s32 iError = BMG160_INIT_VALUE;
 	u8 array[I2C_BUFFER_LEN];
-	u8 stringpos = C_BMG160_ZERO_U8X;
-	array[C_BMG160_ZERO_U8X] = reg_addr;
-	for (stringpos = C_BMG160_ZERO_U8X; stringpos < cnt; stringpos++) {
-		array[stringpos + C_BMG160_ONE_U8X] = *(reg_data + stringpos);
+	u8 stringpos = BMG160_INIT_VALUE;
+	array[BMG160_INIT_VALUE] = reg_addr;
+	for (stringpos = BMG160_INIT_VALUE; stringpos < cnt; stringpos++) {
+		array[stringpos + BMG160_GEN_READ_WRITE_DATA_LENGTH] = *(reg_data + stringpos);
 	}
 	/*
 	* Please take the below function as your reference for
@@ -310,7 +310,7 @@ s8 BMG160_I2C_bus_write(u8 dev_addr, u8 reg_addr, u8 *reg_data, u8 cnt)
 	* add your I2C write function here
 	* iError is an return value of I2C read function
 	* Please select your valid return value
-	* In the driver SUCCESS defined as C_BMG160_ZERO_U8X
+	* In the driver SUCCESS defined as BMG160_INIT_VALUE
     * and FAILURE defined as -1
 	* Note :
 	* This is a full duplex operation,
@@ -330,20 +330,20 @@ s8 BMG160_I2C_bus_write(u8 dev_addr, u8 reg_addr, u8 *reg_data, u8 cnt)
  */
 s8 BMG160_I2C_bus_read(u8 dev_addr, u8 reg_addr, u8 *reg_data, u8 cnt)
 {
-	s32 iError = C_BMG160_ZERO_U8X;
-	u8 array[I2C_BUFFER_LEN] = {C_BMG160_ZERO_U8X};
-	u8 stringpos = C_BMG160_ZERO_U8X;
-	array[C_BMG160_ZERO_U8X] = reg_addr;
+	s32 iError = BMG160_INIT_VALUE;
+	u8 array[I2C_BUFFER_LEN] = {BMG160_INIT_VALUE};
+	u8 stringpos = BMG160_INIT_VALUE;
+	array[BMG160_INIT_VALUE] = reg_addr;
 	/* Please take the below function as your reference
 	 * for read the data using I2C communication
 	 * add your I2C rad function here.
 	 * "IERROR = I2C_WRITE_READ_STRING(DEV_ADDR, ARRAY, ARRAY, 1, CNT)"
 	 * iError is an return value of SPI write function
 	 * Please select your valid return value
-	 * In the driver SUCCESS defined as C_BMG160_ZERO_U8X
+	 * In the driver SUCCESS defined as BMG160_INIT_VALUE
      * and FAILURE defined as -1
 	 */
-	for (stringpos = C_BMG160_ZERO_U8X; stringpos < cnt; stringpos++) {
+	for (stringpos = BMG160_INIT_VALUE; stringpos < cnt; stringpos++) {
 		*(reg_data + stringpos) = array[stringpos];
 	}
 	return (s8)iError;
@@ -358,13 +358,13 @@ s8 BMG160_I2C_bus_read(u8 dev_addr, u8 reg_addr, u8 *reg_data, u8 cnt)
  */
 s8 BMG160_SPI_bus_read(u8 dev_addr, u8 reg_addr, u8 *reg_data, u8 cnt)
 {
-	s32 iError=C_BMG160_ZERO_U8X;
+	s32 iError=BMG160_INIT_VALUE;
 	u8 array[SPI_BUFFER_LEN]={MASK_DATA1};
 	u8 stringpos;
 	/*	For the SPI mode only 7 bits of register addresses are used.
 	The MSB of register address is declared the bit what functionality it is
-	read/write (read as 1/write as C_BMG160_ZERO_U8X)*/
-	array[C_BMG160_ZERO_U8X] = reg_addr|MASK_DATA2;/*read routine is initiated register address is mask with 0x80*/
+	read/write (read as 1/write as BMG160_INIT_VALUE)*/
+	array[BMG160_INIT_VALUE] = reg_addr|MASK_DATA2;/*read routine is initiated register address is mask with 0x80*/
 	/*
 	* Please take the below function as your reference for
 	* read the data using SPI communication
@@ -372,7 +372,7 @@ s8 BMG160_SPI_bus_read(u8 dev_addr, u8 reg_addr, u8 *reg_data, u8 cnt)
 	* add your SPI read function here
 	* iError is an return value of SPI read function
 	* Please select your valid return value
-	* In the driver SUCCESS defined as C_BMG160_ZERO_U8X
+	* In the driver SUCCESS defined as BMG160_INIT_VALUE
     * and FAILURE defined as -1
 	* Note :
 	* This is a full duplex operation,
@@ -381,8 +381,8 @@ s8 BMG160_SPI_bus_read(u8 dev_addr, u8 reg_addr, u8 *reg_data, u8 cnt)
 	* and write string function
 	* For more information please refer data sheet SPI communication:
 	*/
-	for (stringpos = C_BMG160_ZERO_U8X; stringpos < cnt; stringpos++) {
-		*(reg_data + stringpos) = array[stringpos+C_BMG160_ONE_U8X];
+	for (stringpos = BMG160_INIT_VALUE; stringpos < cnt; stringpos++) {
+		*(reg_data + stringpos) = array[stringpos+BMG160_GEN_READ_WRITE_DATA_LENGTH];
 	}
 	return (s8)iError;
 }
@@ -397,15 +397,15 @@ s8 BMG160_SPI_bus_read(u8 dev_addr, u8 reg_addr, u8 *reg_data, u8 cnt)
  */
 s8 BMG160_SPI_bus_write(u8 dev_addr, u8 reg_addr, u8 *reg_data, u8 cnt)
 {
-	s32 iError = C_BMG160_ZERO_U8X;
+	s32 iError = BMG160_INIT_VALUE;
 	u8 array[SPI_BUFFER_LEN * C_BMG160_TWO_U8X];
-	u8 stringpos = C_BMG160_ZERO_U8X;
-	for (stringpos = C_BMG160_ZERO_U8X; stringpos < cnt; stringpos++) {
+	u8 stringpos = BMG160_INIT_VALUE;
+	for (stringpos = BMG160_INIT_VALUE; stringpos < cnt; stringpos++) {
 		/* the operation of (reg_addr++)&0x7F done: because it ensure the
-		   C_BMG160_ZERO_U8X and 1 of the given value
+		   BMG160_INIT_VALUE and 1 of the given value
 		   It is done only for 8bit operation*/
 		array[stringpos * C_BMG160_TWO_U8X] = (reg_addr++) & MASK_DATA3;
-		array[stringpos * C_BMG160_TWO_U8X + C_BMG160_ONE_U8X] = *(reg_data + stringpos);
+		array[stringpos * C_BMG160_TWO_U8X + BMG160_GEN_READ_WRITE_DATA_LENGTH] = *(reg_data + stringpos);
 	}
 	/* Please take the below function as your reference
 	 * for write the data using SPI communication
@@ -413,7 +413,7 @@ s8 BMG160_SPI_bus_write(u8 dev_addr, u8 reg_addr, u8 *reg_data, u8 cnt)
 	 * "IERROR = SPI_WRITE_STRING(ARRAY, CNT*2)"
 	 * iError is an return value of SPI write function
 	 * Please select your valid return value
-	 * In the driver SUCCESS defined as C_BMG160_ZERO_U8X
+	 * In the driver SUCCESS defined as BMG160_INIT_VALUE
      * and FAILURE defined as -1
 	 */
 	return (s8)iError;

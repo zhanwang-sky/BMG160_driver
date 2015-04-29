@@ -21,9 +21,9 @@ INTRODUCTION
 VERSION
 =========
 	- Version of bmg160 sensor driver is:
-		* bmg160.c 		- V2.0.3
-		* bmg160.h 		- V2.0.3
-		* bmg160_support.c 	- V1.0.4
+		* bmg160.c 		- V2.0.4
+		* bmg160.h 		- V2.0.4
+		* bmg160_support.c 	- V1.0.5
 
 INTEGRATION DETAILS
 =====================
@@ -60,5 +60,5 @@ SUPPORTED SENSOR INTERFACE
 
 COPYRIGHT
 ===========
-	- Copyright (C) 2010 - 2014 Bosch Sensortec GmbH
+	- Copyright (C) 2010 - 2015 Bosch Sensortec GmbH
 
