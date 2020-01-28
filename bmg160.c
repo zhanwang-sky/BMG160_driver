@@ -168,7 +168,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_data_x(s16 *v_data_x_s16)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_data_y(s16 *v_data_y_s16)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
 
     /*Array holding the gyro data y LSB and MSB data
      * v_data_u8[0] - Y LSB
@@ -213,7 +213,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_data_y(s16 *v_data_y_s16)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_data_z(s16 *v_data_z_s16)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
 
     /*Array holding the gyro data z LSB and MSB data
      * v_data_u8[0] - Z LSB
@@ -259,7 +259,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_data_z(s16 *v_data_z_s16)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_data_xyz(struct bmg160_data_t *data)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
 
     /*Array holding the gyro data xyz LSB and MSB data
      * v_data_u8[0] - X LSB
@@ -335,7 +335,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_data_xyz(struct bmg160_data_t *data)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_data_xyzi(struct bmg160_data_t *data)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
 
     /*Array holding the gyro data xyz LSB and MSB data
      * v_data_u8[0] - X LSB
@@ -467,7 +467,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_temp(s8 *v_temp_s8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_read_register(u8 v_addr_u8, u8 *v_data_u8, u8 v_len_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
 
     /* check the p_bmg160 struct pointer is NULL*/
     if (p_bmg160 == BMG160_NULL)
@@ -502,7 +502,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_read_register(u8 v_addr_u8, u8 *v_data_u8, u8
 BMG160_RETURN_FUNCTION_TYPE bmg160_burst_read(u8 v_addr_u8, u8 *v_data_u8, u16 v_len_u16)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
 
     /* check the p_bmg160 struct pointer is NULL*/
     if (p_bmg160 == BMG160_NULL)
@@ -537,7 +537,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_burst_read(u8 v_addr_u8, u8 *v_data_u8, u16 v
 BMG160_RETURN_FUNCTION_TYPE bmg160_write_register(u8 v_addr_u8, u8 *v_data_u8, u8 v_len_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
 
     /* check the p_bmg160 struct pointer is NULL*/
     if (p_bmg160 == BMG160_NULL)
@@ -572,7 +572,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_write_register(u8 v_addr_u8, u8 *v_data_u8, u
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_intr_stat_reg_zero(u8 *v_stat0_data_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -616,7 +616,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_intr_stat_reg_zero(u8 *v_stat0_data_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_intr_stat_reg_one(u8 *v_stat1_data_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -662,7 +662,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_intr_stat_reg_one(u8 *v_stat1_data_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_intr_stat_reg_two(u8 *v_stat2_data_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -709,7 +709,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_intr_stat_reg_two(u8 *v_stat2_data_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_intr_stat_reg_three(u8 *v_stat3_data_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -756,7 +756,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_intr_stat_reg_three(u8 *v_stat3_data_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_range_reg(u8 *v_range_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -865,7 +865,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_range_reg(u8 v_range_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_bw(u8 *v_bw_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -982,7 +982,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_bw(u8 v_bw_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_pmu_ext_tri_select(u8 *v_pwu_ext_tri_select_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -1028,7 +1028,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_pmu_ext_tri_select(u8 *v_pwu_ext_tri_sele
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_pmu_ext_tri_select(u8 v_pwu_ext_tri_select_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -1076,7 +1076,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_pmu_ext_tri_select(u8 v_pwu_ext_tri_selec
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_high_bw(u8 *v_high_bw_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -1120,7 +1120,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_high_bw(u8 *v_high_bw_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_high_bw(u8 v_high_bw_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -1175,7 +1175,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_high_bw(u8 v_high_bw_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_shadow_dis(u8 *v_shadow_dis_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -1219,7 +1219,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_shadow_dis(u8 *v_shadow_dis_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_shadow_dis(u8 v_shadow_dis_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -1268,7 +1268,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_shadow_dis(u8 v_shadow_dis_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_soft_rst(void)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_soft_rst_u8;
 
     v_soft_rst_u8 = BMG160_SOFT_RESET;
@@ -1313,7 +1313,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_soft_rst(void)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_data_enable(u8 *v_data_enable_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -1357,7 +1357,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_data_enable(u8 *v_data_enable_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_data_enable(u8 v_data_enable_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -1405,7 +1405,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_data_enable(u8 v_data_enable_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_fifo_enable(u8 *v_fifo_enable_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -1449,7 +1449,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_fifo_enable(u8 *v_fifo_enable_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_fifo_enable(u8 v_fifo_enable_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -1504,7 +1504,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_fifo_enable(u8 v_fifo_enable_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_auto_offset_enable(u8 *v_offset_enable_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -1548,7 +1548,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_auto_offset_enable(u8 *v_offset_enable_u8
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_auto_offset_enable(u8 v_offset_enable_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -1602,7 +1602,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_auto_offset_enable(u8 v_offset_enable_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_intr_output_type(u8 v_param_u8, u8 *v_intr_output_type_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -1667,7 +1667,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_intr_output_type(u8 v_param_u8, u8 *v_int
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_intr_output_type(u8 v_param_u8, u8 v_intr_output_type_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -1740,7 +1740,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_intr_output_type(u8 v_param_u8, u8 v_intr
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_intr_level(u8 v_param_u8, u8 *v_intr_level_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -1805,7 +1805,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_intr_level(u8 v_param_u8, u8 *v_intr_leve
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_intr_level(u8 v_param_u8, u8 v_intr_level_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -1872,7 +1872,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_intr_level(u8 v_param_u8, u8 v_intr_level
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_intr1_highrate(u8 *v_intr1_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -1916,7 +1916,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_intr1_highrate(u8 *v_intr1_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_intr1_highrate(u8 v_intr1_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -1964,7 +1964,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_intr1_highrate(u8 v_intr1_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_intr1_any_motion(u8 *v_int1r_any_motion_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -2008,7 +2008,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_intr1_any_motion(u8 *v_int1r_any_motion_u
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_intr1_any_motion(u8 v_int1r_any_motion_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -2061,7 +2061,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_intr1_any_motion(u8 v_int1r_any_motion_u8
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_intr_data(u8 v_axis_u8, u8 *v_intr_data_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -2125,7 +2125,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_intr_data(u8 v_axis_u8, u8 *v_intr_data_u
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_intr_data(u8 v_axis_u8, u8 v_intr_data_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -2197,7 +2197,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_intr_data(u8 v_axis_u8, u8 v_intr_data_u8
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_intr2_offset(u8 v_axis_u8, u8 *v_intr2_offset_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -2261,7 +2261,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_intr2_offset(u8 v_axis_u8, u8 *v_intr2_of
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_intr2_offset(u8 v_axis_u8, u8 v_intr2_offset_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -2333,7 +2333,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_intr2_offset(u8 v_axis_u8, u8 v_intr2_off
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_intr_offset(u8 v_axis_u8, u8 *v_intr1_offset_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -2397,7 +2397,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_intr_offset(u8 v_axis_u8, u8 *v_intr1_off
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_intr1_offset(u8 v_axis_u8, u8 v_intr1_offset_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -2464,7 +2464,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_intr1_offset(u8 v_axis_u8, u8 v_intr1_off
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_intr2_fifo(u8 *v_intr_fifo_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -2507,7 +2507,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_intr2_fifo(u8 *v_intr_fifo_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_intr1_fifo(u8 *v_intr_fifo_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -2557,7 +2557,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_intr1_fifo(u8 *v_intr_fifo_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_intr_fifo(u8 v_axis_u8, u8 v_intr_fifo_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -2624,7 +2624,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_intr_fifo(u8 v_axis_u8, u8 v_intr_fifo_u8
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_intr2_highrate(u8 *v_intr2_highrate_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -2668,7 +2668,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_intr2_highrate(u8 *v_intr2_highrate_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_intr2_highrate(u8 v_intr2_highrate_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -2716,7 +2716,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_intr2_highrate(u8 v_intr2_highrate_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_intr2_any_motion(u8 *v_intr2_any_motion_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -2760,7 +2760,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_intr2_any_motion(u8 *v_intr2_any_motion_u
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_intr2_any_motion(u8 v_intr2_any_motion_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -2814,7 +2814,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_intr2_any_motion(u8 v_intr2_any_motion_u8
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_offset_unfilt(u8 v_param_u8, u8 *v_offset_unfilt_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -2879,7 +2879,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_offset_unfilt(u8 v_param_u8, u8 *v_offset
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_offset_unfilt(u8 v_param_u8, u8 v_offset_unfilt_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -2952,7 +2952,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_offset_unfilt(u8 v_param_u8, u8 v_offset_
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_unfilt_data(u8 v_param_u8, u8 *v_unfilt_data_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -3016,7 +3016,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_unfilt_data(u8 v_param_u8, u8 *v_unfilt_d
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_unfilt_data(u8 v_param_u8, u8 v_unfilt_data_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -3083,7 +3083,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_unfilt_data(u8 v_param_u8, u8 v_unfilt_da
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_any_motion_thres(u8 *v_any_motion_thres_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -3124,7 +3124,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_any_motion_thres(u8 *v_any_motion_thres_u
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_any_motion_thres(u8 v_any_motion_thres_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -3172,7 +3172,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_any_motion_thres(u8 v_any_motion_thres_u8
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_awake_durn(u8 *v_awake_durn_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -3216,7 +3216,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_awake_durn(u8 *v_awake_durn_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_awake_durn(u8 v_awake_durn_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -3264,7 +3264,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_awake_durn(u8 v_awake_durn_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_any_motion_durn_sample(u8 *v_durn_sample_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -3308,7 +3308,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_any_motion_durn_sample(u8 *v_durn_sample_
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_any_motion_durn_sample(u8 v_durn_sample_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -3362,7 +3362,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_any_motion_durn_sample(u8 v_durn_sample_u
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_any_motion_enable_axis(u8 v_channel_u8, u8 *v_any_motion_axis_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data1_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -3434,7 +3434,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_any_motion_enable_axis(u8 v_channel_u8, u
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_any_motion_enable_axis(u8 v_channel_u8, u8 v_any_motion_axis_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -3516,7 +3516,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_any_motion_enable_axis(u8 v_channel_u8, u
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_fifo_wm_enable(u8 *v_fifo_wm_enable_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -3558,7 +3558,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_fifo_wm_enable(u8 *v_fifo_wm_enable_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_fifo_wm_enable(u8 v_fifo_wm_enable_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -3610,7 +3610,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_fifo_wm_enable(u8 v_fifo_wm_enable_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_rst_intr(u8 v_rst_int_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -3655,7 +3655,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_rst_intr(u8 v_rst_int_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_offset_rst(u8 v_offset_rst_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -3703,7 +3703,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_offset_rst(u8 v_offset_rst_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_latch_stat(u8 *v_latch_stat_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -3747,7 +3747,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_latch_stat(u8 *v_latch_stat_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_latch_stat(u8 v_latch_stat_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -3808,7 +3808,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_latch_stat(u8 v_latch_stat_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_latch_intr(u8 *v_latch_intr_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -3865,7 +3865,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_latch_intr(u8 *v_latch_intr_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_latch_intr(u8 v_latch_intr_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -3918,7 +3918,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_latch_intr(u8 v_latch_intr_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_highrate_hyst(u8 v_channel_u8, u8 *v_highrate_hyst_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -3989,7 +3989,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_highrate_hyst(u8 v_channel_u8, u8 *v_high
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_highrate_hyst(u8 v_channel_u8, u8 v_highrate_hyst_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -4072,7 +4072,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_highrate_hyst(u8 v_channel_u8, u8 v_highr
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_highrate_thres(u8 v_channel_u8, u8 *v_highrate_thres_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -4143,7 +4143,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_highrate_thres(u8 v_channel_u8, u8 *v_hig
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_highrate_thres(u8 v_channel_u8, u8 v_highrate_thres_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -4227,7 +4227,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_highrate_thres(u8 v_channel_u8, u8 v_high
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_highrate_enable_axis(u8 v_channel_u8, u8 *v_enable_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -4299,7 +4299,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_highrate_enable_axis(u8 v_channel_u8, u8 
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_highrate_enable_axis(u8 v_channel_u8, u8 v_enable_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -4385,7 +4385,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_highrate_enable_axis(u8 v_channel_u8, u8 
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_highrate_durn_axis(u8 v_channel_u8, u8 *v_highrate_durn_axis_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -4459,7 +4459,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_highrate_durn_axis(u8 v_channel_u8, u8 *v
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_highrate_durn_axis(u8 v_channel_u8, u8 v_highrate_durn_axis_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -4526,7 +4526,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_highrate_durn_axis(u8 v_channel_u8, u8 v_
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_slow_offset_thres(u8 *v_offset_thres_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -4571,7 +4571,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_slow_offset_thres(u8 *v_offset_thres_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_slow_offset_thres(u8 v_offset_thres_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -4623,7 +4623,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_slow_offset_thres(u8 v_offset_thres_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_slow_offset_durn(u8 *v_offset_durn_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -4671,7 +4671,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_slow_offset_durn(u8 *v_offset_durn_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_slow_offset_durn(u8 v_offset_durn_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -4726,7 +4726,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_slow_offset_durn(u8 v_offset_durn_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_slow_offset_enable_axis(u8 v_channel_u8, u8 *v_slow_offset_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -4799,7 +4799,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_slow_offset_enable_axis(u8 v_channel_u8, 
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_slow_offset_enable_axis(u8 v_channel_u8, u8 v_slow_offset_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -4884,7 +4884,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_slow_offset_enable_axis(u8 v_channel_u8, 
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_offset_word_length(u8 v_channel_u8, u8 *v_offset_word_length_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -4949,7 +4949,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_offset_word_length(u8 v_channel_u8, u8 *v
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_offset_word_length(u8 v_channel_u8, u8 v_offset_word_length_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -5007,7 +5007,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_offset_word_length(u8 v_channel_u8, u8 v_
 BMG160_RETURN_FUNCTION_TYPE bmg160_enable_fast_offset(void)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -5057,7 +5057,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_enable_fast_offset(void)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_fast_offset_enable_axis(u8 *v_fast_offset_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -5110,7 +5110,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_fast_offset_enable_axis(u8 *v_fast_offset
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_fast_offset_enable_axis(u8 v_channel_u8, u8 v_fast_offset_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -5185,7 +5185,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_fast_offset_enable_axis(u8 v_channel_u8, 
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_nvm_remain(u8 *v_nvm_remain_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -5226,7 +5226,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_nvm_remain(u8 *v_nvm_remain_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_nvm_load(u8 v_nvm_load_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -5271,7 +5271,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_nvm_load(u8 v_nvm_load_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_nvm_rdy(u8 *v_nvm_rdy_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -5311,7 +5311,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_nvm_rdy(u8 *v_nvm_rdy_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_nvm_prog_trig(u8 nvm_prog_trig)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -5356,7 +5356,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_nvm_prog_trig(u8 nvm_prog_trig)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_nvm_prog_mode(u8 *nvm_prog_mode)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -5397,7 +5397,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_nvm_prog_mode(u8 *nvm_prog_mode)
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_nvm_prog_mode(u8 nvm_prog_mode)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -5449,7 +5449,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_nvm_prog_mode(u8 nvm_prog_mode)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_i2c_wdt(u8 v_channel_u8, u8 *v_i2c_wdt_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -5513,7 +5513,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_i2c_wdt(u8 v_channel_u8, u8 *v_i2c_wdt_u8
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_i2c_wdt(u8 v_channel_u8, u8 v_i2c_wdt_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -5580,7 +5580,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_i2c_wdt(u8 v_channel_u8, u8 v_i2c_wdt_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_spi3(u8 *v_spi3_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -5623,7 +5623,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_spi3(u8 *v_spi3_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_spi3(u8 v_spi3_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -5668,7 +5668,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_spi3(u8 v_spi3_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_fifo_tag(u8 *v_fifo_tag_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -5710,7 +5710,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_fifo_tag(u8 *v_fifo_tag_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_fifo_tag(u8 v_fifo_tag_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -5761,7 +5761,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_fifo_tag(u8 v_fifo_tag_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_fifo_wm_level(u8 *v_fifo_wm_level_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -5800,7 +5800,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_fifo_wm_level(u8 *v_fifo_wm_level_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_fifo_wm_level(u8 v_fifo_wm_level_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -5991,7 +5991,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_offset(u8 v_axis_u8, s16 *v_offset_s16)
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_offset(u8 v_axis_u8, s16 v_offset_s16)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data1_u8r = BMG160_INIT_VALUE;
     u8 v_data2_u8r = BMG160_INIT_VALUE;
 
@@ -6101,7 +6101,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_offset(u8 v_axis_u8, s16 v_offset_s16)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_gp(u8 v_param_u8, u8 *v_gp_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -6161,7 +6161,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_gp(u8 v_param_u8, u8 *v_gp_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_gp(u8 v_param_u8, u8 v_gp_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -6204,10 +6204,10 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_gp(u8 v_param_u8, u8 v_gp_u8)
 /*!
  *  @brief This API reads the FIFO data from the register 0x3F
  *  and store the data in the user defined buffer mapped to the member
- *  of structure "fifo_configuration"
+ *  of structure "bmg160_fifo_configuration"
  *
  *  @note Before calling this API user must map the following FIFO settings
- *  required to read the FIFO data to the structure "fifo_configuration"
+ *  required to read the FIFO data to the structure "bmg160_fifo_configuration"
  *    - Data buffer to store the FIFO data is mapped to
  *      the structure member "fifo_data"
  *    - Number of bytes to be read from FIFO is mapped to
@@ -6222,7 +6222,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_gp(u8 v_param_u8, u8 v_gp_u8)
  *  @retval -127 -> Null Pointer Error
  *
  */
-BMG160_RETURN_FUNCTION_TYPE bmg160_read_fifo_data(struct fifo_configuration *fifo_conf)
+BMG160_RETURN_FUNCTION_TYPE bmg160_read_fifo_data(struct bmg160_fifo_configuration *fifo_conf)
 {
     /* variable used to return the bus communication status*/
     BMG160_RETURN_FUNCTION_TYPE comres;
@@ -6321,7 +6321,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_read_fifo_data(struct fifo_configuration *fif
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_fifo_stat_reg(u8 *v_fifo_stat_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -6359,7 +6359,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_fifo_stat_reg(u8 *v_fifo_stat_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_fifo_frame_count(u8 *v_fifo_frame_count_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -6397,7 +6397,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_fifo_frame_count(u8 *v_fifo_frame_count_u
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_fifo_overrun(u8 *v_fifo_overrun_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -6442,7 +6442,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_fifo_overrun(u8 *v_fifo_overrun_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_fifo_mode(u8 *v_fifo_mode_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -6487,7 +6487,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_fifo_mode(u8 *v_fifo_mode_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_fifo_mode(u8 v_fifo_mode_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -6544,7 +6544,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_fifo_mode(u8 v_fifo_mode_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_fifo_data_select(u8 *v_fifo_data_select_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -6589,7 +6589,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_fifo_data_select(u8 *v_fifo_data_select_u
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_fifo_data_select(u8 v_fifo_data_select_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -6647,7 +6647,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_fifo_data_select(u8 v_fifo_data_select_u8
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_power_mode(u8 *v_power_mode_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 data1 = BMG160_INIT_VALUE;
     u8 data2 = BMG160_INIT_VALUE;
     u8 data3 = BMG160_INIT_VALUE;
@@ -6730,7 +6730,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_power_mode(u8 *v_power_mode_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_power_mode(u8 v_power_mode_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 data1 = BMG160_INIT_VALUE;
     u8 data2 = BMG160_INIT_VALUE;
     u8 data3 = BMG160_INIT_VALUE;
@@ -6972,7 +6972,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_selftest(u8 *v_result_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_auto_sleep_durn(u8 *v_durn_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -7034,7 +7034,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_auto_sleep_durn(u8 *v_durn_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_auto_sleep_durn(u8 v_durn_u8, u8 v_bw_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
     u8 v_auto_sleep_durn_u8r = BMG160_INIT_VALUE;
 
@@ -7188,7 +7188,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_set_auto_sleep_durn(u8 v_durn_u8, u8 v_bw_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_get_sleep_durn(u8 *v_durn_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
@@ -7237,7 +7237,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_sleep_durn(u8 *v_durn_u8)
 BMG160_RETURN_FUNCTION_TYPE bmg160_set_sleep_durn(u8 v_durn_u8)
 {
     /* variable used to return the bus communication status*/
-    BMG160_RETURN_FUNCTION_TYPE comres = ERROR;
+    BMG160_RETURN_FUNCTION_TYPE comres = E_BMG160_INITIAL_CODE;
     u8 v_data_u8 = BMG160_INIT_VALUE;
 
     /* check the p_bmg160 struct pointer is NULL*/
